@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bshkw6xs3hj4v"]
+
+[ext_resource type="Theme" uid="uid://js6l4dot30d4" path="res://shader/rarity_color/2.tres" id="1_yslcc"]
+[ext_resource type="Script" uid="uid://cjqp5g66gai1u" path="res://scripts/DataClass/starInfo.gd" id="2_ck4da"]
+[ext_resource type="Shader" uid="uid://d2l3xrbhfa7dq" path="res://shader/SHADER/blue.gdshader" id="3_0avv0"]
+[ext_resource type="Texture2D" uid="uid://rbrscvmebolm" path="res://assets/Patterns纹理/wallpaper.svg" id="4_0avv0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_if41v"]
+shader = ExtResource("3_0avv0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6dqj"]
+shader = ExtResource("3_0avv0")
+
+[node name="starinfo" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 500)
+offset_right = 300.0
+offset_bottom = 429.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("1_yslcc")
+script = ExtResource("2_ck4da")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_if41v")
+layout_mode = 2
+texture = ExtResource("4_0avv0")
+expand_mode = 5
+stretch_mode = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+material = SubResource("ShaderMaterial_b6dqj")
+layout_mode = 2
+texture = ExtResource("4_0avv0")
+region_rect = Rect2(22, 0, 62, 16)
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

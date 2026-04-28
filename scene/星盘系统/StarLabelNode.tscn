@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b76mvamqf3kqe"]
+
+[ext_resource type="Script" uid="uid://7whj51h4wse6" path="res://scripts/star_node.gd" id="1_t7mvp"]
+
+[node name="StarNode" type="PanelContainer"]
+custom_minimum_size = Vector2(20, 0)
+offset_right = 20.0
+offset_bottom = 23.0
+script = ExtResource("1_t7mvp")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "天"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

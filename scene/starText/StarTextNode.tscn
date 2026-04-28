@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://hwtrrbgrywwe"]
+
+[ext_resource type="Texture2D" uid="uid://bkfmipx4qxl0o" path="res://assets/星曜图标新版/紫薇星.png" id="1_rcap4"]
+[ext_resource type="Script" uid="uid://5fuox1cl6dyd" path="res://scripts/Resources/star.gd" id="2_3rx4v"]
+[ext_resource type="Script" uid="uid://480qjxxpvdl" path="res://scripts/star/star_text_node.gd" id="2_r8mt2"]
+[ext_resource type="FontFile" uid="uid://dhtw4gt7myp47" path="res://assets/Text style文字风格/中文字体/SmileySans-Oblique.ttf" id="3_tahib"]
+[ext_resource type="StyleBox" uid="uid://cdyh5g37pb0h1" path="res://shader/计分框.tres" id="4_lem81"]
+[ext_resource type="Texture2D" uid="uid://cy4c0sfgmyqhl" path="res://assets/Star 12 (1).png" id="6_u15c7"]
+
+[sub_resource type="Resource" id="Resource_u15c7"]
+script = ExtResource("2_3rx4v")
+star_id = ""
+star_name = ""
+rarity = 0
+texture_path = ""
+description = Array[String]([])
+starinfo_packed_path = ""
+tags = Array[String]([])
+element_id = ""
+wu_xing = ""
+yin_yang = ""
+level = 0
+metadata/_custom_type_script = "uid://5fuox1cl6dyd"
+
+[sub_resource type="Curve" id="Curve_clexo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.901235, 0.0519481), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_im3hx"]
+curve = SubResource("Curve_clexo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qny1v"]
+emission_shape_scale = Vector3(30, 30, 30)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+gravity = Vector3(0, 50, 0)
+radial_accel_min = 0.599998
+radial_accel_max = 0.599998
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_im3hx")
+hue_variation_min = -0.44
+hue_variation_max = 0.61
+
+[node name="StarText" type="Container"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 60.0
+offset_bottom = 60.0
+mouse_default_cursor_shape = 2
+script = ExtResource("2_r8mt2")
+_star_data = SubResource("Resource_u15c7")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(30, 30)
+emitting = false
+texture = ExtResource("6_u15c7")
+lifetime = 0.3
+explosiveness = 0.85
+randomness = 0.04
+collision_base_size = 0.0
+local_coords = true
+trail_lifetime = 1.1
+process_material = SubResource("ParticleProcessMaterial_qny1v")
+
+[node name="SCORE_UI" type="Label" parent="."]
+visible = false
+top_level = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.859799, 0.629368, 0.475135, 1)
+theme_override_fonts/font = ExtResource("3_tahib")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_lem81")
+text = "+5"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_rcap4")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 0.531)
+show_behind_parent = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 65.0
+offset_bottom = 65.0
+mouse_filter = 2
+texture = ExtResource("1_rcap4")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

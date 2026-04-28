@@ -1,0 +1,304 @@
+[gd_resource type="Resource" script_class="StarRuleTotal" load_steps=32 format=3 uid="uid://diusjuuhd10wb"]
+
+[ext_resource type="Script" uid="uid://qsb1sw4r5y5b" path="res://scripts/DataClass/starrules_total.gd" id="1_cgh3x"]
+[ext_resource type="Script" uid="uid://bb18ivcsm3kr4" path="res://scripts/DataClass/starrule_group.gd" id="2_d4aj0"]
+[ext_resource type="Script" uid="uid://yjotlmos7v7n" path="res://scripts/DataClass/starrule.gd" id="3_rqj7f"]
+
+[sub_resource type="Resource" id="Resource_rqj7f"]
+script = ExtResource("3_rqj7f")
+phase = 3
+trigger_type = 0
+trigger_tag = 0
+trigger_scope = 3
+trigger_value = 0.0
+effect_type = 11
+effect_duration = 0
+effect_scope = 3
+effect_tag = ""
+effect_target = ""
+effect_value = 3.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_noxba"]
+script = ExtResource("2_d4aj0")
+star_name = "紫微星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_rqj7f")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_p88ef"]
+script = ExtResource("3_rqj7f")
+phase = 0
+trigger_type = null
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 1
+effect_duration = null
+effect_scope = null
+effect_tag = ""
+effect_target = ""
+effect_value = 1.5
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_k3ftq"]
+script = ExtResource("3_rqj7f")
+phase = 3
+trigger_type = null
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 8
+effect_duration = 0
+effect_scope = 4
+effect_tag = "科甲星"
+effect_target = ""
+effect_value = 1.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_ygg01"]
+script = ExtResource("2_d4aj0")
+star_name = "天机星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_p88ef"), SubResource("Resource_k3ftq")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_jyqfe"]
+script = ExtResource("3_rqj7f")
+phase = 3
+trigger_type = 3
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 11
+effect_duration = 0
+effect_scope = 3
+effect_tag = ""
+effect_target = ""
+effect_value = 3.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_ktd2x"]
+script = ExtResource("2_d4aj0")
+star_name = "太阳星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_jyqfe")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_vw44t"]
+script = ExtResource("3_rqj7f")
+phase = 2
+trigger_type = 4
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 7
+effect_duration = 1
+effect_scope = null
+effect_tag = ""
+effect_target = "武曲星"
+effect_value = 3.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_1hasw"]
+script = ExtResource("2_d4aj0")
+star_name = "武曲星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_vw44t")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_ywn3w"]
+script = ExtResource("3_rqj7f")
+phase = 4
+trigger_type = 5
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 7
+effect_duration = 1
+effect_scope = 3
+effect_tag = ""
+effect_target = ""
+effect_value = 1.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_shfp7"]
+script = ExtResource("2_d4aj0")
+star_name = "天同"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_ywn3w")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_xxxpk"]
+script = ExtResource("2_d4aj0")
+star_name = "廉贞"
+starrule_group = Array[ExtResource("3_rqj7f")]([])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_rapcl"]
+script = ExtResource("3_rqj7f")
+phase = 3
+trigger_type = 2
+trigger_tag = null
+trigger_scope = null
+trigger_value = 5.0
+effect_type = 10
+effect_duration = 0
+effect_scope = 3
+effect_tag = ""
+effect_target = ""
+effect_value = 0.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_nh62o"]
+script = ExtResource("2_d4aj0")
+star_name = "天府星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_rapcl")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_0jlx0"]
+script = ExtResource("3_rqj7f")
+phase = 3
+trigger_type = 3
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 11
+effect_duration = 0
+effect_scope = 3
+effect_tag = ""
+effect_target = ""
+effect_value = 3.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_u4pwq"]
+script = ExtResource("2_d4aj0")
+star_name = "太阴星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_0jlx0")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_yrq4t"]
+script = ExtResource("3_rqj7f")
+phase = null
+trigger_type = null
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 7
+effect_duration = 0
+effect_scope = null
+effect_tag = "临时星"
+effect_target = ""
+effect_value = 3.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_pak6d"]
+script = ExtResource("2_d4aj0")
+star_name = "贪狼星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_yrq4t")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_udod0"]
+script = ExtResource("3_rqj7f")
+phase = 2
+trigger_type = null
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = null
+effect_duration = null
+effect_scope = null
+effect_tag = ""
+effect_target = ""
+effect_value = 0.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_ictp0"]
+script = ExtResource("2_d4aj0")
+star_name = "巨门星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_udod0")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_s5rgg"]
+script = ExtResource("3_rqj7f")
+phase = 2
+trigger_type = null
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 7
+effect_duration = 0
+effect_scope = 1
+effect_tag = "全部星耀"
+effect_target = ""
+effect_value = 3.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_y3nmx"]
+script = ExtResource("2_d4aj0")
+star_name = "天相星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_s5rgg")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_2lkwx"]
+script = ExtResource("3_rqj7f")
+phase = 2
+trigger_type = null
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = 3
+effect_duration = 0
+effect_scope = 3
+effect_tag = ""
+effect_target = ""
+effect_value = -1.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_3ph2t"]
+script = ExtResource("2_d4aj0")
+star_name = "天梁星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_2lkwx")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_0msoi"]
+script = ExtResource("3_rqj7f")
+phase = 3
+trigger_type = 0
+trigger_tag = 5
+trigger_scope = 3
+trigger_value = 0.0
+effect_type = 8
+effect_duration = 0
+effect_scope = null
+effect_tag = ""
+effect_target = "七杀星"
+effect_value = 0.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_pwed5"]
+script = ExtResource("2_d4aj0")
+star_name = "七杀星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_0msoi")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[sub_resource type="Resource" id="Resource_utp8s"]
+script = ExtResource("3_rqj7f")
+phase = null
+trigger_type = null
+trigger_tag = null
+trigger_scope = null
+trigger_value = 0.0
+effect_type = null
+effect_duration = null
+effect_scope = null
+effect_tag = ""
+effect_target = ""
+effect_value = 0.0
+metadata/_custom_type_script = "uid://yjotlmos7v7n"
+
+[sub_resource type="Resource" id="Resource_pkisg"]
+script = ExtResource("2_d4aj0")
+star_name = "破军星"
+starrule_group = Array[ExtResource("3_rqj7f")]([SubResource("Resource_utp8s")])
+metadata/_custom_type_script = "uid://bb18ivcsm3kr4"
+
+[resource]
+script = ExtResource("1_cgh3x")
+starrule_total = Array[ExtResource("2_d4aj0")]([SubResource("Resource_noxba"), SubResource("Resource_ygg01"), SubResource("Resource_ktd2x"), SubResource("Resource_1hasw"), SubResource("Resource_shfp7"), SubResource("Resource_xxxpk"), SubResource("Resource_nh62o"), SubResource("Resource_u4pwq"), SubResource("Resource_pak6d"), SubResource("Resource_ictp0"), SubResource("Resource_y3nmx"), SubResource("Resource_3ph2t"), SubResource("Resource_pwed5"), SubResource("Resource_pkisg")])
+metadata/_custom_type_script = "uid://qsb1sw4r5y5b"

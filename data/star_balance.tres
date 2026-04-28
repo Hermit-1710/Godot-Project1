@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StarBalance" load_steps=2 format=3 uid="uid://dd0r0b2a3jq0q"]
+
+[ext_resource type="Script" path="res://scripts/Resources/star_balance.gd" id="1_m8bd6"]
+
+[resource]
+script = ExtResource("1_m8bd6")
+rarity_distribution = [[96, 1, 1, 1, 1], [77, 10, 10, 1, 1], [48, 20, 20, 10, 1], [31, 25, 25, 15, 3], [29, 25, 25, 15, 5], [26, 20, 20, 25, 8]]
+target_score_list = [50, 120, 250, 480, 700, 1000]
+exam_names = ["县试", "府试", "院试", "乡试", "会试", "殿试"]
+luck = 0

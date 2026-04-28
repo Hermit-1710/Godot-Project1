@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://05mk32vg2ye"]
+
+[ext_resource type="AudioStream" uid="uid://0r76k5xmlsb5" path="res://sound/add.mp3" id="1_s3gp3"]
+
+[sub_resource type="GDScript" id="GDScript_ipq5g"]
+resource_name = "audioplayer"
+script/source = "extends Node
+
+@export var BUTTON_CLICK:AudioStream
+
+
+var audio_player: AudioStreamPlayer
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	audio_player = AudioStreamPlayer.new()
+	get_tree().root.call_deferred(\"add_child\", audio_player)
+	if audio_player.is_inside_tree():
+		print(\"audio_player added to scene tree\")
+	else:
+			print(\"audio_player not in scene tree\")
+			
+			
+func audio_play(audio_file):
+	if audio_player.is_inside_tree():
+				audio_player.stream = audio_file
+				audio_player.play()
+				
+	else:
+		print(\"audio play fail\")
+func button_click():
+	if audio_player.is_inside_tree():
+		audio_player.stream = BUTTON_CLICK
+		audio_player.play()
+	
+	
+"
+
+[node name="AudioGlobalPlayer" type="Node"]
+script = SubResource("GDScript_ipq5g")
+BUTTON_CLICK = ExtResource("1_s3gp3")

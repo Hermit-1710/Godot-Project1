@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="紫薇星耀——类幸运房东"
+run/main_scene="res://scene/main_scene.tscn"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SceneTransitionManager="*res://scene/Autoload/scene_transition_manager.tscn"
+AudioPlayer="*res://scene/Autoload/AudioPlayer.tscn"
+CsvImport="*res://scene/Autoload/Autoload_CSVImport.gd"
+StarInfoPop="*res://scene/Autoload/StarInfo.tscn"
+GlobalDragManager="*res://scene/Autoload/drag_manager.tscn"
+ShaderGlobals="*res://scene/Autoload/Shader Globals.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/\'from csv to tres\'/plugin.cfg", "res://addons/gdfxr/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "yellow",
+"res://scene/": "red",
+"res://scripts/": "blue",
+"res://shader/": "purple"
+}
+
+[importer_defaults]
+
+csv_translation={
+"compress": false
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

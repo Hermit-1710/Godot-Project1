@@ -1,0 +1,192 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8bier3pb6h6p"]
+
+[ext_resource type="PackedScene" uid="uid://dct1gmhwbgbkf" path="res://scene/星盘系统/星盘.tscn" id="1_ei4xu"]
+[ext_resource type="Texture2D" path="res://assets/picture/DALL·E 2024-12-18 20.29.03 - A simple white star in pixel art style, with sharp edges and a clean, minimalist design. The star should be centered on a solid color background, with.webp" id="2_gfa6u"]
+[ext_resource type="Theme" uid="uid://cgqlh6fi7wcdh" path="res://shader/palace_theme.tres" id="2_wk7i1"]
+[ext_resource type="Texture2D" uid="uid://dagy7te8218b1" path="res://assets/picture/图鉴.png" id="4_xpdf2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk78d"]
+bg_color = Color(0.404959, 0.386241, 0.386241, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5n241"]
+texture = ExtResource("2_gfa6u")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3y0tl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackGround" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="PanelContainer" type="PanelContainer" parent="BackGround"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Board" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="PanelContainer" type="PanelContainer" parent="Board"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="Board/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="命盘" parent="Board/PanelContainer/CenterContainer" node_paths=PackedStringArray("star_backpack") instance=ExtResource("1_ei4xu")]
+layout_mode = 2
+star_backpack = NodePath("../../../../UI/右下/PanelContainer/Label/StarBag")
+
+[node name="Button" type="Button" parent="Board"]
+offset_left = 754.0
+offset_top = 426.0
+offset_right = 840.0
+offset_bottom = 457.0
+text = "随机生成⭐"
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="提示tips" type="Label" parent="UI"]
+offset_left = 1557.0
+offset_top = 677.0
+offset_right = 1597.0
+offset_bottom = 700.0
+size_flags_horizontal = 4
+text = "提示"
+
+[node name="左上" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="UI/左上"]
+layout_mode = 2
+text = "返回"
+
+[node name="Button2" type="Button" parent="UI/左上"]
+layout_mode = 2
+
+[node name="右上" type="VBoxContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/右上"]
+layout_mode = 2
+text = "信息概览"
+
+[node name="右中" type="VBoxContainer" parent="UI"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Button" type="Label" parent="UI/右中"]
+layout_mode = 2
+text = "道具库"
+
+[node name="GridContainer" type="GridContainer" parent="UI/右中/Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="右下" type="VBoxContainer" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/右下"]
+layout_mode = 2
+theme = ExtResource("2_wk7i1")
+
+[node name="Label" type="VBoxContainer" parent="UI/右下/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/右下/PanelContainer/Label"]
+layout_mode = 2
+text = "背包"
+
+[node name="StarBag" type="GridContainer" parent="UI/右下/PanelContainer/Label"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+columns = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -261.0
+offset_right = 132.0
+offset_bottom = -176.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nk78d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "100
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5n241")
+
+[node name="Label2" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "100
+"
+
+[node name="目标Target" type="MenuButton" parent="UI/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "目标"
+switch_on_hover = true
+item_count = 2
+popup/item_0/text = "Nihao"
+popup/item_0/icon = SubResource("CanvasTexture_3y0tl")
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_1/text = "here、"
+popup/item_1/id = 1
+
+[node name="compute_score" type="Node" parent="."]
+
+[node name="game_data" type="Node" parent="."]
+
+[node name="图鉴" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(825.781, 445.344)
+scale = Vector2(0.655716, 0.664762)
+texture = ExtResource("4_xpdf2")
+
+[connection signal="pressed" from="Board/Button" to="Board/PanelContainer/CenterContainer/命盘" method="_on_button_pressed"]

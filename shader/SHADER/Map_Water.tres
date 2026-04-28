@@ -1,0 +1,41 @@
+[gd_resource type="Shader" format=3 uid="uid://b6bsy4lw3fbe7"]
+
+[resource]
+code = "shader_type canvas_item;
+uniform vec4 new_color:source_color=vec4(0.0,0.0,0.0,0.0);
+uniform vec4 outline_color:source_color=vec4(0.0,0.0,0.0,1.0);
+uniform vec4 background_color:source_color=vec4(0.0,0.0,0.0,0.0);
+uniform float outline_up_width = 1.0;
+uniform float outline_down_width = 1.0;
+uniform float outline_left_width = 1.0;
+uniform float outline_right_width = 1.0;
+void fragment() {
+	vec3 shallow_blue = vec3(0,0.8,0.8);
+	vec2 uv = UV;
+	vec2 uv_up = UV + vec2(0, TEXTURE_PIXEL_SIZE.y)*outline_up_width;
+	vec2 uv_down = UV + vec2(0, -TEXTURE_PIXEL_SIZE.y)*outline_down_width;
+	vec2 uv_left = UV + vec2(TEXTURE_PIXEL_SIZE.x,0)*outline_left_width;
+	vec2 uv_right = UV + vec2(-TEXTURE_PIXEL_SIZE.x,0)*outline_right_width;
+
+	vec4 color_up= texture(TEXTURE,uv_up);
+	vec4 color_down= texture(TEXTURE,uv_down);
+	vec4 color_left= texture(TEXTURE,uv_left);
+	vec4 color_right= texture(TEXTURE,uv_right);
+
+	vec4 outline = color_up +  color_down + color_left + color_right;
+	outline.rgb = outline_color.rgb;
+
+	vec4 original_color= texture(TEXTURE,UV);
+	vec4 default_color = vec4(UV[0]*0.5,UV[1]*0.5,0.3,original_color.a);
+
+	original_color= mix(original_color,new_color, original_color.a);
+	vec4 _after_add_outline = mix(outline, original_color, original_color.a);
+	if (background_color != vec4(0.0,0.0,0.0,0.0)){
+		COLOR = mix(background_color,_after_add_outline, _after_add_outline.a) ;}
+	else{
+		COLOR = mix(default_color,_after_add_outline, _after_add_outline.a);
+	}
+
+	COLOR = vec4(1.0-UV[0]*0.8,1.0-UV[1]*0.5,UV[1]*0.8,1);
+
+}"

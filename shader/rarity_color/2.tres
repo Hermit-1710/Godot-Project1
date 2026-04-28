@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://js6l4dot30d4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jduys"]
+bg_color = Color(0.145, 0.165, 0.208, 0.762)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.459, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_jduys")

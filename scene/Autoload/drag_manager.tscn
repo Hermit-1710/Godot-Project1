@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wjdfc6a04xec"]
+
+[ext_resource type="Script" uid="uid://crr1gdxaqm8es" path="res://scripts/autoload/drag_manager.gd" id="1_ey6pq"]
+
+[node name="DragManager" type="Node2D"]
+script = ExtResource("1_ey6pq")

@@ -1,0 +1,521 @@
+[gd_scene load_steps=38 format=3 uid="uid://cesudfjlochxr"]
+
+[ext_resource type="PackedScene" uid="uid://dct1gmhwbgbkf" path="res://scene/星盘系统/星盘.tscn" id="1_3gva5"]
+[ext_resource type="Script" uid="uid://dbhhxhuanv20w" path="res://scripts/DataClass/GameButton.gd" id="1_gmds1"]
+[ext_resource type="Script" uid="uid://8lhvv0tk5ql7" path="res://scripts/debug/debug.gd" id="1_i0l48"]
+[ext_resource type="Script" uid="uid://csrbtew0urlta" path="res://scripts/UI/ui_manager.gd" id="1_vnsvw"]
+[ext_resource type="Script" uid="uid://lno2uyldjp5l" path="res://scripts/gameplay/game_controller.gd" id="2_owbbt"]
+[ext_resource type="Script" uid="uid://bsuh0rqloix3y" path="res://scripts/gameplay/score_controller.gd" id="3_i0l48"]
+[ext_resource type="PackedScene" uid="uid://cdn0u1fl2wf42" path="res://scene/图鉴/GuideBook.tscn" id="7_65vh6"]
+[ext_resource type="Texture2D" uid="uid://bv68nb15egap8" path="res://assets/星曜立绘/ChatGPT Image 2025年12月9日 19_12_59.png" id="7_gmds1"]
+[ext_resource type="FontFile" uid="uid://bipdbxpci5g16" path="res://assets/Text style文字风格/中文字体/演示悠然小楷.ttf" id="9_gmds1"]
+[ext_resource type="PackedScene" uid="uid://1xa06c00ajsq" path="res://scene/信息栏.tscn" id="10_2rxup"]
+[ext_resource type="Script" uid="uid://bw357h0fxv5ce" path="res://scripts/Resources/star_balance.gd" id="11_65vh6"]
+[ext_resource type="StyleBox" uid="uid://b5im5rcqukyaa" path="res://shader/按键主题.tres" id="12_65vh6"]
+[ext_resource type="AudioStream" uid="uid://bge3kqwoa6x68" path="res://sound/StarInfoAdd.mp3" id="18_5tsa7"]
+[ext_resource type="PackedScene" uid="uid://ci1adfv762ysn" path="res://scene/star_choice_panel.tscn" id="19_86738"]
+[ext_resource type="AudioStream" uid="uid://bssuywyqddadr" path="res://sound/embient/中式-不紧不慢-轻松活力Lantern.wav" id="20_65vh6"]
+[ext_resource type="Script" uid="uid://bbjfoqw7tuj88" path="res://scripts/GameBG_audio_player.gd" id="21_65vh6"]
+[ext_resource type="FontFile" uid="uid://bk5acscwajn4y" path="res://assets/Text style文字风格/中文字体/演示夏行楷.ttf" id="22_0ev5u"]
+[ext_resource type="PackedScene" uid="uid://c1ek2uwd5umng" path="res://scene/铜钱body.tscn" id="23_i0l48"]
+[ext_resource type="Texture2D" uid="uid://ro6bw0gruiw0" path="res://assets/星曜立绘/微信图片_20250407190238.png" id="25_g5dfs"]
+[ext_resource type="Texture2D" uid="uid://ubgxjpdsfuv6" path="res://assets/星曜立绘/微信图片_20250407190326.png" id="26_55fvt"]
+[ext_resource type="Texture2D" uid="uid://b5fjf7a3l1wmr" path="res://assets/星曜立绘/微信图片_20250407190323.png" id="27_7x3aj"]
+[ext_resource type="Texture2D" uid="uid://dhjnmc58ftjed" path="res://assets/杂图/Union.png" id="28_55fvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ev5u"]
+bg_color = Color(1, 0.909796, 0.779502, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0l48"]
+texture = ExtResource("7_gmds1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0l48"]
+font = ExtResource("9_gmds1")
+font_size = 100
+font_color = Color(0.5067887, 0.3016217, 0.17673756, 1)
+outline_color = Color(0.60183, 0.490327, 0.415695, 1)
+shadow_size = 3
+shadow_color = Color(0.44, 0.241927, 0.1188, 0.172549)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65nqw"]
+bg_color = Color(0.438902, 0.239865, 0.118425, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.812278, 0.748842, 0.657211, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_newxu"]
+font_size = 50
+shadow_color = Color(0.98, 0.837083, 0.637, 0.513726)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gmds1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0l48"]
+bg_color = Color(0.976471, 0.835294, 0.631373, 1)
+
+[sub_resource type="Resource" id="Resource_gmds1"]
+script = ExtResource("11_65vh6")
+metadata/_custom_type_script = "uid://bw357h0fxv5ce"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5dfs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7x3aj"]
+font = ExtResource("22_0ev5u")
+font_size = 120
+font_color = Color(1, 0.893448, 0.723601, 1)
+outline_size = 10
+outline_color = Color(0.798701, 0.457208, 0.228639, 1)
+shadow_size = 20
+shadow_color = Color(0.764758, 0.37232, 0.37232, 0.631)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7x3aj"]
+texture = ExtResource("28_55fvt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5dfs"]
+bg_color = Color(1, 0.814676, 0.460541, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.479634, 0.390061, 0.224045, 1)
+shadow_color = Color(0.608618, 0.138202, 0.196781, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55fvt"]
+bg_color = Color(1, 0.663225, 0.460541, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.438902, 0.239865, 0.118425, 1)
+shadow_color = Color(0.608618, 0.138202, 0.196781, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x3aj"]
+bg_color = Color(1, 0.663225, 0.460541, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.438902, 0.239865, 0.118425, 1)
+shadow_color = Color(0.608618, 0.138202, 0.196781, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adnhn"]
+bg_color = Color(1, 0.663225, 0.460541, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.438902, 0.239865, 0.118425, 1)
+shadow_color = Color(0.608618, 0.138202, 0.196781, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="debug" type="CanvasLayer" parent="."]
+script = ExtResource("1_i0l48")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="debug"]
+offset_left = 1300.0
+offset_top = 13.0
+offset_right = 1443.0
+offset_bottom = 254.0
+
+[node name="unfold" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "unfold
+"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="fold" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "fold
+"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="pick" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "pick
+"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="Guide" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "Guide"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="shop" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "shop"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="Boss" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "Boss"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="add_random_star" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "add_random_star
+"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="next_round" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "next_round
+"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="bag unfold" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "bag unfold"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="bag fold2" type="Button" parent="debug/VBoxContainer"]
+layout_mode = 2
+text = "bag fold"
+script = ExtResource("1_gmds1")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="星曜效果&计分" type="Node" parent="." node_paths=PackedStringArray("star_panel", "round_score_ui", "interactable_object")]
+script = ExtResource("3_i0l48")
+star_panel = NodePath("../Board/chessboard/MarginContainer/CenterContainer/命盘")
+round_score_ui = NodePath("../Board/chessboard/MarginContainer/CenterContainer/本轮分数/数字")
+interactable_object = NodePath("../Interactable Object")
+
+[node name="各组件动效管理脚本" type="Node" parent="." node_paths=PackedStringArray("chessboard", "guidebook", "bag", "fold_button", "unfold_button", "guide_button")]
+script = ExtResource("1_vnsvw")
+chessboard = NodePath("../Board/chessboard")
+guidebook = NodePath("../Board/Guidebook")
+bag = NodePath("../Board/Panel")
+fold_button = NodePath("../debug/VBoxContainer/fold")
+unfold_button = NodePath("../debug/VBoxContainer/unfold")
+guide_button = NodePath("../debug/VBoxContainer/Guide")
+
+[node name="游戏运行逻辑" type="Node" parent="." node_paths=PackedStringArray("ui_manager", "star_choice_ui", "star_backpack", "start_round_button", "submit_button", "star_panel", "score_controller")]
+script = ExtResource("2_owbbt")
+ui_manager = NodePath("../各组件动效管理脚本")
+star_choice_ui = NodePath("../UI/选择interface")
+star_backpack = NodePath("../Board/Panel/Label/StarBag")
+start_round_button = NodePath("../UI/HBoxContainer/回合开始")
+submit_button = NodePath("../UI/HBoxContainer/确认提交")
+star_panel = NodePath("../Board/chessboard/MarginContainer/CenterContainer/命盘")
+score_controller = NodePath("../星曜效果&计分")
+
+[node name="BackGround" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="星盘BG" type="Panel" parent="BackGround"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ev5u")
+
+[node name="Interactable Object" type="CanvasLayer" parent="."]
+layer = -2
+visible = false
+
+[node name="铜钱4" parent="Interactable Object" instance=ExtResource("23_i0l48")]
+position = Vector2(194, 622)
+input_pickable = true
+
+[node name="铜钱5" parent="Interactable Object" instance=ExtResource("23_i0l48")]
+position = Vector2(160, 789)
+input_pickable = true
+
+[node name="铜钱6" parent="Interactable Object" instance=ExtResource("23_i0l48")]
+position = Vector2(70, 770)
+input_pickable = true
+
+[node name="Board" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="chessboard" type="PanelContainer" parent="Board"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -505.0
+offset_right = 500.0
+offset_bottom = 505.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.002)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_i0l48")
+
+[node name="MarginContainer" type="MarginContainer" parent="Board/chessboard"]
+use_parent_material = true
+custom_minimum_size = Vector2(900, 910)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CenterContainer" type="CenterContainer" parent="Board/chessboard/MarginContainer"]
+use_parent_material = true
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 2
+
+[node name="命盘" parent="Board/chessboard/MarginContainer/CenterContainer" instance=ExtResource("1_3gva5")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="本轮分数" type="VBoxContainer" parent="Board/chessboard/MarginContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="标题" type="Label" parent="Board/chessboard/MarginContainer/CenterContainer/本轮分数"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "本轮分数"
+label_settings = SubResource("LabelSettings_i0l48")
+
+[node name="数字" type="Label" parent="Board/chessboard/MarginContainer/CenterContainer/本轮分数"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_65nqw")
+text = "0"
+label_settings = SubResource("LabelSettings_newxu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Board/chessboard/MarginContainer/CenterContainer/本轮分数"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gmds1")
+
+[node name="Guidebook" parent="Board" instance=ExtResource("7_65vh6")]
+unique_name_in_owner = true
+offset_left = 1367.0
+offset_top = 229.0
+offset_right = 2167.0
+offset_bottom = 1029.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="Board"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -227.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i0l48")
+
+[node name="Label" type="VBoxContainer" parent="Board/Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Board/Panel/Label"]
+layout_mode = 2
+text = "背包"
+
+[node name="StarBag" type="GridContainer" parent="Board/Panel/Label"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+columns = 5
+
+[node name="主要信息&计分UI" parent="Board" node_paths=PackedStringArray("score_controller", "game_controller") instance=ExtResource("10_2rxup")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 3.0
+offset_top = -52.0
+offset_right = 353.0
+offset_bottom = 835.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.9, 0.9)
+score_controller = NodePath("../../星曜效果&计分")
+game_controller = NodePath("../../游戏运行逻辑")
+balance = SubResource("Resource_gmds1")
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="选择interface" parent="UI" instance=ExtResource("19_86738")]
+unique_name_in_owner = true
+visible = false
+size_flags_horizontal = 4
+size_flags_vertical = 4
+sound_effect = ExtResource("18_5tsa7")
+
+[node name="提示tips" type="Label" parent="UI"]
+offset_left = 1557.0
+offset_top = 677.0
+offset_right = 1597.0
+offset_bottom = 700.0
+size_flags_horizontal = 4
+text = "提示"
+
+[node name="新立绘选择界面" type="PanelContainer" parent="UI"]
+visible = false
+offset_left = 312.0
+offset_top = 1104.0
+offset_right = 1295.0
+offset_bottom = 1652.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g5dfs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/新立绘选择界面"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="UI/新立绘选择界面/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "学习环节"
+label_settings = SubResource("LabelSettings_7x3aj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/新立绘选择界面/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/新立绘选择界面/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+texture = ExtResource("25_g5dfs")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="UI/新立绘选择界面/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("26_55fvt")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="UI/新立绘选择界面/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+texture = ExtResource("27_7x3aj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="操作次数UI" type="PanelContainer" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(200, 300)
+offset_left = 1372.0
+offset_top = 544.0
+offset_right = 1572.0
+offset_bottom = 844.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7x3aj")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/操作次数UI"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/操作次数UI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="TextureRect" type="Panel" parent="UI/操作次数UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5dfs")
+
+[node name="TextureRect2" type="Panel" parent="UI/操作次数UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_55fvt")
+
+[node name="TextureRect3" type="Panel" parent="UI/操作次数UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5dfs")
+
+[node name="TextureRect4" type="Panel" parent="UI/操作次数UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7x3aj")
+
+[node name="TextureRect5" type="Panel" parent="UI/操作次数UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5dfs")
+
+[node name="TextureRect6" type="Panel" parent="UI/操作次数UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_adnhn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+offset_left = 1270.0
+offset_top = 578.0
+offset_right = 1590.0
+offset_bottom = 638.2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 120
+
+[node name="回合开始" type="Button" parent="UI/HBoxContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("12_65vh6")
+text = "做题
+"
+
+[node name="确认提交" type="Button" parent="UI/HBoxContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("12_65vh6")
+text = "提交
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("guide_open_button", "round_open_button", "shop_open_button", "boss_open_button", "pick_open_button")]
+stream = ExtResource("20_65vh6")
+script = ExtResource("21_65vh6")
+guide_open_button = NodePath("../debug/VBoxContainer/Guide")
+round_open_button = NodePath("../debug/VBoxContainer/unfold")
+shop_open_button = NodePath("../debug/VBoxContainer/shop")
+boss_open_button = NodePath("../debug/VBoxContainer/Boss")
+pick_open_button = NodePath("../debug/VBoxContainer/pick")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 0)
+anchor_mode = 0
+
+[connection signal="pressed" from="debug/VBoxContainer/add_random_star" to="游戏运行逻辑" method="_on_add_random_star_pressed"]
+[connection signal="pressed" from="debug/VBoxContainer/next_round" to="星曜效果&计分" method="debug_advance_round"]
+[connection signal="pressed" from="debug/VBoxContainer/bag unfold" to="各组件动效管理脚本" method="bag_unfold_movement"]
+[connection signal="pressed" from="debug/VBoxContainer/bag fold2" to="各组件动效管理脚本" method="bag_fold_movement"]

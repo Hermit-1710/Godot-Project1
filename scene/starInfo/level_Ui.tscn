@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7b36f36m0apt"]
+
+[ext_resource type="Texture2D" uid="uid://dsce2n4ag43jp" path="res://assets/Star 2.png" id="1_nfo2i"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(15, 15)
+offset_right = 30.0
+offset_bottom = 30.0
+mouse_filter = 2
+texture = ExtResource("1_nfo2i")
+expand_mode = 1

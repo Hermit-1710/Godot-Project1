@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StarSet" load_steps=3 format=3 uid="uid://b83cxnii5kfit"]
+
+[ext_resource type="Script" uid="uid://7s2xm8gab56y" path="res://scripts/Resources/starset.gd" id="1_2sleq"]
+[ext_resource type="Script" uid="uid://5fuox1cl6dyd" path="res://scripts/Resources/star.gd" id="2_4x2iu"]
+
+[resource]
+script = ExtResource("1_2sleq")
+starset_total = Array[ExtResource("2_4x2iu")]([])
+starset_rarity = {}
+starset_temp = Array[ExtResource("2_4x2iu")]([])

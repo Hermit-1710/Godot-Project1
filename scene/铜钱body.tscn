@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1ek2uwd5umng"]
+
+[ext_resource type="Script" uid="uid://cfu3odtxkcoie" path="res://scripts/Interactive Object/铜钱rigidbody.gd" id="1_2al8o"]
+[ext_resource type="Texture2D" uid="uid://cawcnwynxrd3e" path="res://assets/铜钱 (4).png" id="2_0wbwt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dn1d"]
+radius = 92.635
+
+[node name="铜钱" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_2al8o")
+metadata/_edit_vertical_guides_ = [-85.0]
+
+[node name="shadow2" type="Sprite2D" parent="."]
+texture = ExtResource("2_0wbwt")
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(0.133, 0.133, 0.133, 0.369)
+show_behind_parent = true
+texture = ExtResource("2_0wbwt")
+offset = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+shape = SubResource("CircleShape2D_6dn1d")
+debug_color = Color(0.163661, 0.632336, 0.710448, 0.42)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbl4ii50f6xs7"]
+
+[ext_resource type="Script" uid="uid://dijxjgarmjuoj" path="res://scripts/图鉴/star_sets.gd" id="1_20idw"]
+[ext_resource type="PackedScene" uid="uid://du6v4yvno21fk" path="res://scene/图鉴/star.tscn" id="2_aj6my"]
+
+[node name="star sets" type="HBoxContainer"]
+size_flags_horizontal = 10
+script = ExtResource("1_20idw")
+
+[node name="Star" parent="." instance=ExtResource("2_aj6my")]
+modulate = Color(1, 0.999815, 0.999815, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Star2" parent="." instance=ExtResource("2_aj6my")]
+modulate = Color(1, 0.999815, 0.999815, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Star3" parent="." instance=ExtResource("2_aj6my")]
+modulate = Color(1, 0.999815, 0.999815, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+stretch_mode = 4

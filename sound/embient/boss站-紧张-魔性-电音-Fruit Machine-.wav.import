@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3hbf132huusx"
+path="res://.godot/imported/boss站-紧张-魔性-电音-Fruit Machine-.wav-ae2a3a7580abe60f2055f9173c1cfe04.sample"
+
+[deps]
+
+source_file="res://sound/embient/boss站-紧张-魔性-电音-Fruit Machine-.wav"
+dest_files=["res://.godot/imported/boss站-紧张-魔性-电音-Fruit Machine-.wav-ae2a3a7580abe60f2055f9173c1cfe04.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

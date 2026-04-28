@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://drcid78obmufv"]
+
+[ext_resource type="Script" uid="uid://dgk7ytdxhxn1b" path="res://scripts/UI/计分ui模块.gd" id="1_aa4sh"]
+[ext_resource type="FontFile" uid="uid://dqh8s4140a7rq" path="res://assets/Text style文字风格/英文字体/sparky-stones-font/SparkyStonesRegular-BW6ld.ttf" id="1_es4ym"]
+[ext_resource type="Texture2D" uid="uid://dg4jmk5toprw8" path="res://assets/Frame 73 (1).png" id="2_aa4sh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os3q3"]
+bg_color = Color(1, 0.460541, 0.527718, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.812278, 0.187119, 0.264967, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color(0.608618, 0.138202, 0.196781, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_see5d"]
+font = ExtResource("1_es4ym")
+font_size = 25
+font_color = Color(0.628985, 0.107666, 0.107666, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5nu2"]
+bg_color = Color(0.4116, 0.8379, 0.98, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.133218, 0.652696, 0.825856, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color(0.292795, 0.438016, 0.486423, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c4col"]
+font = ExtResource("1_es4ym")
+font_size = 25
+font_color = Color(0.0569506, 0.577623, 0.75118, 1)
+
+[node name="VBoxContainer" type="VBoxContainer"]
+script = ExtResource("1_aa4sh")
+
+[node name="倍率" type="Label" parent="."]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_os3q3")
+text = "15"
+label_settings = SubResource("LabelSettings_see5d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.839433, 0.480118, 0.312066, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_aa4sh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="分数" type="Label" parent="."]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m5nu2")
+text = "1000"
+label_settings = SubResource("LabelSettings_c4col")
+horizontal_alignment = 1
+vertical_alignment = 1

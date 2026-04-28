@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://co584gerbevyt"]
+
+[ext_resource type="Theme" uid="uid://js6l4dot30d4" path="res://shader/rarity_color/2.tres" id="1_jn4wn"]
+[ext_resource type="Script" uid="uid://cjqp5g66gai1u" path="res://scripts/DataClass/starInfo.gd" id="2_oheqq"]
+[ext_resource type="Texture2D" uid="uid://bbd1j18e2i534" path="res://assets/星曜图标新版/火星.png" id="3_738ib"]
+[ext_resource type="Script" uid="uid://dbhhxhuanv20w" path="res://scripts/DataClass/GameButton.gd" id="4_y36jd"]
+
+[sub_resource type="Theme" id="Theme_p3bie"]
+Label/font_sizes/font_size = 20
+
+[node name="starinfo" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 500)
+offset_right = 300.0
+offset_bottom = 429.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 2
+theme = ExtResource("1_jn4wn")
+script = ExtResource("2_oheqq")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="星曜 图标&Title" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="startexture" type="TextureRect" parent="MarginContainer/VBoxContainer/星曜 图标&Title"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_738ib")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/星曜 图标&Title"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/星曜 图标&Title/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(0, 0.458824, 1, 1)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "火星 
+"
+
+[node name="classification" type="Label" parent="MarginContainer/VBoxContainer/星曜 图标&Title/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866588, 0.713379, 0.52448, 1)
+theme_override_font_sizes/font_size = 20
+text = "煞星，阳"
+
+[node name="说明" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_p3bie")
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/说明"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/说明/HBoxContainer2"]
+modulate = Color(0.976471, 0.835294, 0.631373, 1)
+layout_mode = 2
+text = "基础得分："
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/说明/HBoxContainer2"]
+modulate = Color(0, 0.988783, 0.210573, 1)
+layout_mode = 2
+text = "+0"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/说明"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[color=#f9d5a1]激发态[/color] : [color=green] +6 [/color], 层数[color=red] -1
+[/color]。层数归零进入休眠态。"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/说明"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=#f9d5a1]休眠态[/color]：无效果，层数[color=red] -1
+[/color]。层数归零进入激发态。"
+scroll_active = false
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/说明"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+bbcode_enabled = true
+text = "状态切换时，随机获得[color=green]1-3[/color]层下个状态"
+scroll_active = false
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+text = "选择"
+script = ExtResource("4_y36jd")
+metadata/_custom_type_script = "uid://dbhhxhuanv20w"
+
+[node name="星曜等级" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0

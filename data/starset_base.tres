@@ -1,0 +1,866 @@
+[gd_resource type="Resource" script_class="StarSet" load_steps=122 format=3 uid="uid://cffhyk86qaoe5"]
+
+[ext_resource type="Script" uid="uid://7s2xm8gab56y" path="res://scripts/Resources/starset.gd" id="1_jgik7"]
+[ext_resource type="Script" uid="uid://5fuox1cl6dyd" path="res://scripts/Resources/star.gd" id="2_goejt"]
+[ext_resource type="Script" uid="uid://hm76noo3gtyl" path="res://scripts/Resources/score.gd" id="3_u8qpr"]
+
+[sub_resource type="Resource" id="Resource_0qjr4"]
+script = ExtResource("3_u8qpr")
+base_score = 5
+
+[sub_resource type="Resource" id="Resource_utmdg"]
+script = ExtResource("2_goejt")
+star_id = "0"
+star_name = "紫微星"
+rarity = 5
+texture_path = "res://assets/星曜图标新版/紫薇星.png"
+description = Array[String](["[color=#f9d5a1]基础得分[/color] : [color=green]+5[/color]"])
+starinfo_packed_path = "res://scene/starInfo/紫薇星.tscn"
+wu_xing = "土"
+yin_yang = "阴"
+score = SubResource("Resource_0qjr4")
+
+[sub_resource type="Resource" id="Resource_ht5ul"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_dkag0"]
+script = ExtResource("2_goejt")
+star_id = "1"
+star_name = "天机星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/天机星.png"
+description = Array[String](["[color=#f9d5a1]基础得分[/color] : [color=green]+4[/color]"])
+wu_xing = "木"
+yin_yang = "阳"
+score = SubResource("Resource_ht5ul")
+
+[sub_resource type="Resource" id="Resource_lpuwj"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_5omes"]
+script = ExtResource("2_goejt")
+star_id = "2"
+star_name = "太阳星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/太阳星.png"
+description = Array[String](["[color=#f9d5a1]旺位[/color] : 位于[color=#f9d5a1] 寅/卯/辰/巳/午/未[/color] 宫额外[color=green]+2[/color]"])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_lpuwj")
+
+[sub_resource type="Resource" id="Resource_x8f5o"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_l03ir"]
+script = ExtResource("2_goejt")
+star_id = "3"
+star_name = "武曲星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/武曲星.png"
+description = Array[String](["3回合 +14"])
+wu_xing = "金"
+yin_yang = "阴"
+score = SubResource("Resource_x8f5o")
+
+[sub_resource type="Resource" id="Resource_s1mup"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_yorjf"]
+script = ExtResource("2_goejt")
+star_id = "4"
+star_name = "天同星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/天同星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阳"
+score = SubResource("Resource_s1mup")
+
+[sub_resource type="Resource" id="Resource_ghjkb"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_as78r"]
+script = ExtResource("2_goejt")
+star_id = "5"
+star_name = "廉贞星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/廉贞星.png"
+description = Array[String]([""])
+wu_xing = "木火"
+yin_yang = "阴"
+score = SubResource("Resource_ghjkb")
+
+[sub_resource type="Resource" id="Resource_ibc2v"]
+script = ExtResource("3_u8qpr")
+base_score = 5
+
+[sub_resource type="Resource" id="Resource_gybsi"]
+script = ExtResource("2_goejt")
+star_id = "6"
+star_name = "天府星"
+rarity = 5
+texture_path = "res://assets/星曜图标新版/天府星.png"
+description = Array[String]([""])
+wu_xing = "木"
+yin_yang = "阴"
+score = SubResource("Resource_ibc2v")
+
+[sub_resource type="Resource" id="Resource_ny3tc"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_kk0q6"]
+script = ExtResource("2_goejt")
+star_id = "7"
+star_name = "太阴星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/太阴星.png"
+description = Array[String](["[color=#f9d5a1]旺位[/color] : 位于[color=#f9d5a1] 申/酉/戌/亥/子/丑[/color] 宫额外[color=green]+2[/color]"])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_ny3tc")
+
+[sub_resource type="Resource" id="Resource_q77wl"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_o82lv"]
+script = ExtResource("2_goejt")
+star_id = "8"
+star_name = "贪狼星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/贪狼星.png"
+description = Array[String](["幸运[color=green]+2[/color]，获得一颗[color=pink]异性[/color]星曜"])
+wu_xing = "水木"
+yin_yang = "阳"
+score = SubResource("Resource_q77wl")
+
+[sub_resource type="Resource" id="Resource_ejbs5"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_xwmk0"]
+script = ExtResource("2_goejt")
+star_id = "9"
+star_name = "巨门星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/巨门星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_ejbs5")
+
+[sub_resource type="Resource" id="Resource_v4b3w"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_ront0"]
+script = ExtResource("2_goejt")
+star_id = "10"
+star_name = "天相星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/天相星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阳"
+score = SubResource("Resource_v4b3w")
+
+[sub_resource type="Resource" id="Resource_xej78"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_ywpw4"]
+script = ExtResource("2_goejt")
+star_id = "11"
+star_name = "天梁星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/天梁星.png"
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_xej78")
+
+[sub_resource type="Resource" id="Resource_8idqg"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_gp14g"]
+script = ExtResource("2_goejt")
+star_id = "12"
+star_name = "七杀星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/七杀星.png"
+description = Array[String]([""])
+wu_xing = "火金"
+yin_yang = "阴"
+score = SubResource("Resource_8idqg")
+
+[sub_resource type="Resource" id="Resource_j10n3"]
+script = ExtResource("3_u8qpr")
+base_score = 4
+
+[sub_resource type="Resource" id="Resource_2qsgx"]
+script = ExtResource("2_goejt")
+star_id = "13"
+star_name = "破军星"
+rarity = 4
+texture_path = "res://assets/星曜图标新版/破军星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_j10n3")
+
+[sub_resource type="Resource" id="Resource_mbige"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_da6xs"]
+script = ExtResource("2_goejt")
+star_id = "14"
+star_name = "左辅星"
+rarity = 3
+texture_path = "res://assets/星曜图标新版/左辅星.png"
+description = Array[String](["\"[color=#f9d5a1]辅佐[/color]：位于[color=#f9d5a1] 三方四正 [/color]的随机一颗星曜"])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_mbige")
+
+[sub_resource type="Resource" id="Resource_08ugx"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_8ihbc"]
+script = ExtResource("2_goejt")
+star_id = "15"
+star_name = "右弼星"
+rarity = 3
+texture_path = "res://assets/星曜图标新版/右弼星.png"
+description = Array[String](["\"[color=#f9d5a1]辅佐[/color]：位于[color=#f9d5a1] 三台 [/color]的随机一颗星曜"])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_08ugx")
+
+[sub_resource type="Resource" id="Resource_ooixc"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_51q4g"]
+script = ExtResource("2_goejt")
+star_id = "16"
+star_name = "文曲星"
+rarity = 3
+texture_path = "res://assets/星曜图标新版/文曲星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_ooixc")
+
+[sub_resource type="Resource" id="Resource_bhfyr"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_vccsq"]
+script = ExtResource("2_goejt")
+star_id = "17"
+star_name = "文昌星"
+rarity = 3
+texture_path = "res://assets/星曜图标新版/文昌星.png"
+description = Array[String]([""])
+wu_xing = "金"
+yin_yang = "阳"
+score = SubResource("Resource_bhfyr")
+
+[sub_resource type="Resource" id="Resource_bwtso"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_1dj17"]
+script = ExtResource("2_goejt")
+star_id = "18"
+star_name = "天魁星"
+rarity = 3
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_bwtso")
+
+[sub_resource type="Resource" id="Resource_o0t45"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_q7iul"]
+script = ExtResource("2_goejt")
+star_id = "19"
+star_name = "天钺星"
+rarity = 3
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阴"
+score = SubResource("Resource_o0t45")
+
+[sub_resource type="Resource" id="Resource_va3br"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_0xs0s"]
+script = ExtResource("2_goejt")
+star_id = "20"
+star_name = "禄存星"
+rarity = 3
+texture_path = "res://assets/星曜图标新版/禄存星.png"
+description = Array[String](["无，稳定加1元"])
+wu_xing = "土"
+yin_yang = "阴"
+score = SubResource("Resource_va3br")
+
+[sub_resource type="Resource" id="Resource_wnq36"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_gy4ef"]
+script = ExtResource("2_goejt")
+star_id = "21"
+star_name = "天马星"
+rarity = 3
+texture_path = "res://assets/星曜图标新版/天马星.png"
+description = Array[String](["激活三方四正的效果"])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_wnq36")
+
+[sub_resource type="Resource" id="Resource_dnvni"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_x71y2"]
+script = ExtResource("2_goejt")
+star_id = "22"
+star_name = "擎羊星"
+rarity = 2
+texture_path = "res://assets/星曜图标新版/擎羊星.png"
+description = Array[String]([""])
+wu_xing = "火金"
+yin_yang = "阳"
+score = SubResource("Resource_dnvni")
+
+[sub_resource type="Resource" id="Resource_jbqk1"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_m0lw0"]
+script = ExtResource("2_goejt")
+star_id = "23"
+star_name = "陀罗星"
+rarity = 2
+texture_path = "res://assets/星曜图标新版/陀罗星.png"
+description = Array[String](["每层未激活态+1，每次叠一层未激活状态，上限（5）"])
+wu_xing = "金"
+yin_yang = "阴"
+score = SubResource("Resource_jbqk1")
+
+[sub_resource type="Resource" id="Resource_sy6ns"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_2cbwi"]
+script = ExtResource("2_goejt")
+star_id = "24"
+star_name = "火星"
+rarity = 2
+texture_path = "res://assets/星曜图标新版/火星.png"
+description = Array[String](["\"[color=#f9d5a1]激发态[/color] : [color=green] +6 [/color]"])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_sy6ns")
+
+[sub_resource type="Resource" id="Resource_4shl0"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_ijbnr"]
+script = ExtResource("2_goejt")
+star_id = "25"
+star_name = "铃星"
+rarity = 2
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阴"
+score = SubResource("Resource_4shl0")
+
+[sub_resource type="Resource" id="Resource_mxeio"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_4fxx6"]
+script = ExtResource("2_goejt")
+star_id = "26"
+star_name = "地空星"
+rarity = 2
+texture_path = "res://assets/星曜图标新版/地空星.png"
+description = Array[String](["\"50% [color=red] +0 [/color] or[color=green] +6 [/color]"])
+wu_xing = "火"
+yin_yang = "阴"
+score = SubResource("Resource_mxeio")
+
+[sub_resource type="Resource" id="Resource_p76ot"]
+script = ExtResource("3_u8qpr")
+base_score = 3
+
+[sub_resource type="Resource" id="Resource_6qigx"]
+script = ExtResource("2_goejt")
+star_id = "27"
+star_name = "地劫星"
+rarity = 2
+texture_path = "res://assets/星曜图标新版/地劫星.png"
+description = Array[String](["种类多加分多"])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_p76ot")
+
+[sub_resource type="Resource" id="Resource_gkac7"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_6j83l"]
+script = ExtResource("2_goejt")
+star_id = "28"
+star_name = "天官星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_gkac7")
+
+[sub_resource type="Resource" id="Resource_ueets"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_w327c"]
+script = ExtResource("2_goejt")
+star_id = "29"
+star_name = "天福星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_ueets")
+
+[sub_resource type="Resource" id="Resource_dcka0"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_i3ss5"]
+script = ExtResource("2_goejt")
+star_id = "30"
+star_name = "天虚星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阴"
+score = SubResource("Resource_dcka0")
+
+[sub_resource type="Resource" id="Resource_sl4oi"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_few47"]
+script = ExtResource("2_goejt")
+star_id = "31"
+star_name = "天哭星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "金"
+yin_yang = "阳"
+score = SubResource("Resource_sl4oi")
+
+[sub_resource type="Resource" id="Resource_q33o1"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_k30f4"]
+script = ExtResource("2_goejt")
+star_id = "32"
+star_name = "龙池星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阳"
+score = SubResource("Resource_q33o1")
+
+[sub_resource type="Resource" id="Resource_rgf5d"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_jyheg"]
+script = ExtResource("2_goejt")
+star_id = "33"
+star_name = "凤阁星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_rgf5d")
+
+[sub_resource type="Resource" id="Resource_kbr5y"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_ejrtr"]
+script = ExtResource("2_goejt")
+star_id = "34"
+star_name = "红鸾星"
+rarity = 1
+texture_path = "res://assets/星曜图标新版/红鸾星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_kbr5y")
+
+[sub_resource type="Resource" id="Resource_mae5r"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_h5ytc"]
+script = ExtResource("2_goejt")
+star_id = "35"
+star_name = "天喜星"
+rarity = 1
+texture_path = "res://assets/星曜图标新版/天喜星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阳"
+score = SubResource("Resource_mae5r")
+
+[sub_resource type="Resource" id="Resource_g21vn"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_30gd8"]
+script = ExtResource("2_goejt")
+star_id = "36"
+star_name = "孤辰星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_g21vn")
+
+[sub_resource type="Resource" id="Resource_y375b"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_etkts"]
+script = ExtResource("2_goejt")
+star_id = "37"
+star_name = "寡宿星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阴"
+score = SubResource("Resource_y375b")
+
+[sub_resource type="Resource" id="Resource_llau6"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_j8u0p"]
+script = ExtResource("2_goejt")
+star_id = "38"
+star_name = "蜚廉星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阴"
+score = SubResource("Resource_llau6")
+
+[sub_resource type="Resource" id="Resource_r3uee"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_5yghr"]
+script = ExtResource("2_goejt")
+star_id = "39"
+star_name = "破碎星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阴"
+score = SubResource("Resource_r3uee")
+
+[sub_resource type="Resource" id="Resource_8ua5f"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_q51wa"]
+script = ExtResource("2_goejt")
+star_id = "40"
+star_name = "华盖星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "木"
+yin_yang = "无"
+score = SubResource("Resource_8ua5f")
+
+[sub_resource type="Resource" id="Resource_qxopw"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_ymcvg"]
+script = ExtResource("2_goejt")
+star_id = "41"
+star_name = "咸池星"
+rarity = 1
+texture_path = "res://assets/星曜图标新版/咸池星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_qxopw")
+
+[sub_resource type="Resource" id="Resource_hu38g"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_7l0t0"]
+script = ExtResource("2_goejt")
+star_id = "42"
+star_name = "天德星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "无"
+yin_yang = "阳"
+score = SubResource("Resource_hu38g")
+
+[sub_resource type="Resource" id="Resource_kd8mx"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_bfxyq"]
+script = ExtResource("2_goejt")
+star_id = "43"
+star_name = "天才星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "木"
+yin_yang = "阴"
+score = SubResource("Resource_kd8mx")
+
+[sub_resource type="Resource" id="Resource_14vv0"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_eqw23"]
+script = ExtResource("2_goejt")
+star_id = "44"
+star_name = "天寿星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_14vv0")
+
+[sub_resource type="Resource" id="Resource_a8qdi"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_cmoiy"]
+script = ExtResource("2_goejt")
+star_id = "45"
+star_name = "天刑星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_a8qdi")
+
+[sub_resource type="Resource" id="Resource_whwiw"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_k72dg"]
+script = ExtResource("2_goejt")
+star_id = "46"
+star_name = "天姚星"
+rarity = 1
+texture_path = "res://assets/星曜图标新版/天姚星.png"
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_whwiw")
+
+[sub_resource type="Resource" id="Resource_ygjmm"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_aqkt1"]
+script = ExtResource("2_goejt")
+star_id = "47"
+star_name = "解神星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "木"
+yin_yang = "阳"
+score = SubResource("Resource_ygjmm")
+
+[sub_resource type="Resource" id="Resource_7xalj"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_8oqnf"]
+script = ExtResource("2_goejt")
+star_id = "48"
+star_name = "天巫星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阴"
+score = SubResource("Resource_7xalj")
+
+[sub_resource type="Resource" id="Resource_vhj1q"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_5h76i"]
+script = ExtResource("2_goejt")
+star_id = "49"
+star_name = "天月星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阴"
+score = SubResource("Resource_vhj1q")
+
+[sub_resource type="Resource" id="Resource_gl6g1"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_0qu3w"]
+script = ExtResource("2_goejt")
+star_id = "50"
+star_name = "阴煞星"
+rarity = 1
+texture_path = "res://assets/星曜图标新版/阴煞星.png"
+description = Array[String]([""])
+wu_xing = "无"
+yin_yang = "无"
+score = SubResource("Resource_gl6g1")
+
+[sub_resource type="Resource" id="Resource_n5wcg"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_xkl1y"]
+script = ExtResource("2_goejt")
+star_id = "51"
+star_name = "台辅星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_n5wcg")
+
+[sub_resource type="Resource" id="Resource_051hm"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_hv16d"]
+script = ExtResource("2_goejt")
+star_id = "52"
+star_name = "封诰星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阴"
+score = SubResource("Resource_051hm")
+
+[sub_resource type="Resource" id="Resource_5nvbm"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_t2gi2"]
+script = ExtResource("2_goejt")
+star_id = "53"
+star_name = "八座星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阴"
+score = SubResource("Resource_5nvbm")
+
+[sub_resource type="Resource" id="Resource_6r25r"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_a04a1"]
+script = ExtResource("2_goejt")
+star_id = "54"
+star_name = "三台星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_6r25r")
+
+[sub_resource type="Resource" id="Resource_gf884"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_2dgk3"]
+script = ExtResource("2_goejt")
+star_id = "55"
+star_name = "恩光星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "火"
+yin_yang = "阳"
+score = SubResource("Resource_gf884")
+
+[sub_resource type="Resource" id="Resource_jsh7x"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_derg7"]
+script = ExtResource("2_goejt")
+star_id = "56"
+star_name = "天贵星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "土"
+yin_yang = "阳"
+score = SubResource("Resource_jsh7x")
+
+[sub_resource type="Resource" id="Resource_016je"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_myi73"]
+script = ExtResource("2_goejt")
+star_id = "57"
+star_name = "天伤星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阳"
+score = SubResource("Resource_016je")
+
+[sub_resource type="Resource" id="Resource_xcq15"]
+script = ExtResource("3_u8qpr")
+base_score = 2
+
+[sub_resource type="Resource" id="Resource_5o4tr"]
+script = ExtResource("2_goejt")
+star_id = "58"
+star_name = "天使星"
+rarity = 1
+description = Array[String]([""])
+wu_xing = "水"
+yin_yang = "阴"
+score = SubResource("Resource_xcq15")
+
+[resource]
+script = ExtResource("1_jgik7")
+starset_total = Array[ExtResource("2_goejt")]([SubResource("Resource_utmdg"), SubResource("Resource_dkag0"), SubResource("Resource_5omes"), SubResource("Resource_l03ir"), SubResource("Resource_yorjf"), SubResource("Resource_as78r"), SubResource("Resource_gybsi"), SubResource("Resource_kk0q6"), SubResource("Resource_o82lv"), SubResource("Resource_xwmk0"), SubResource("Resource_ront0"), SubResource("Resource_ywpw4"), SubResource("Resource_gp14g"), SubResource("Resource_2qsgx"), SubResource("Resource_da6xs"), SubResource("Resource_8ihbc"), SubResource("Resource_51q4g"), SubResource("Resource_vccsq"), SubResource("Resource_1dj17"), SubResource("Resource_q7iul"), SubResource("Resource_0xs0s"), SubResource("Resource_gy4ef"), SubResource("Resource_x71y2"), SubResource("Resource_m0lw0"), SubResource("Resource_2cbwi"), SubResource("Resource_ijbnr"), SubResource("Resource_4fxx6"), SubResource("Resource_6qigx"), SubResource("Resource_6j83l"), SubResource("Resource_w327c"), SubResource("Resource_i3ss5"), SubResource("Resource_few47"), SubResource("Resource_k30f4"), SubResource("Resource_jyheg"), SubResource("Resource_ejrtr"), SubResource("Resource_h5ytc"), SubResource("Resource_30gd8"), SubResource("Resource_etkts"), SubResource("Resource_j8u0p"), SubResource("Resource_5yghr"), SubResource("Resource_q51wa"), SubResource("Resource_ymcvg"), SubResource("Resource_7l0t0"), SubResource("Resource_bfxyq"), SubResource("Resource_eqw23"), SubResource("Resource_cmoiy"), SubResource("Resource_k72dg"), SubResource("Resource_aqkt1"), SubResource("Resource_8oqnf"), SubResource("Resource_5h76i"), SubResource("Resource_0qu3w"), SubResource("Resource_xkl1y"), SubResource("Resource_hv16d"), SubResource("Resource_t2gi2"), SubResource("Resource_a04a1"), SubResource("Resource_2dgk3"), SubResource("Resource_derg7"), SubResource("Resource_myi73"), SubResource("Resource_5o4tr")])

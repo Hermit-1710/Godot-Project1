@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://cogkyvlexens4"]
+
+[ext_resource type="Script" uid="uid://bxpc8pct8iycy" path="res://scripts/main_menu.gd" id="2_xil6n"]
+[ext_resource type="PackedScene" uid="uid://dvs8pbxamcinq" path="res://scene/星盘系统/星盘MainPage.tscn" id="3_4wnd8"]
+[ext_resource type="Script" uid="uid://dbhhxhuanv20w" path="res://scripts/DataClass/GameButton.gd" id="3_x5n27"]
+[ext_resource type="PackedScene" uid="uid://cesudfjlochxr" path="res://scene/version0.1/GPVersion1.tscn" id="3_xd3a6"]
+[ext_resource type="AudioStream" uid="uid://cmsj0k0afvgmk" path="res://sound/embient/魔性-中场-短Waiting.wav" id="5_x5n27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi0k3"]
+bg_color = Color(0.211765, 0.247059, 0.388235, 1)
+
+[sub_resource type="Theme" id="Theme_1nbsb"]
+Button/colors/font_color = Color(0.4704, 0.691227, 0.98, 1)
+Label/colors/font_color = Color(0.4116, 0.8379, 0.98, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wnd8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_x5n27"]
+Button/colors/font_color = Color(0.4704, 0.691227, 0.98, 1)
+Button/colors/font_focus_color = Color(0.976471, 0.835294, 0.631373, 1)
+Button/colors/font_pressed_color = Color(1, 0, 0.124526, 1)
+Button/font_sizes/font_size = 30
+Button/styles/normal = SubResource("StyleBoxFlat_4wnd8")
+
+[node name="MainScene" type="Node2D"]
+
+[node name="BackGround" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="PanelContainer" type="PanelContainer" parent="BackGround"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xi0k3")
+
+[node name="TextureRect" type="TextureRect" parent="BackGround"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="MarginContainer" parent="CanvasLayer" node_paths=PackedStringArray("start_button", "settings_button", "exit_button")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -642.0
+offset_top = -310.0
+offset_right = -242.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_1nbsb")
+script = ExtResource("2_xil6n")
+start_button = NodePath("VBoxContainer/VBoxContainer/New_Game")
+settings_button = NodePath("VBoxContainer/VBoxContainer/Button3")
+exit_button = NodePath("VBoxContainer/VBoxContainer/Button4")
+target_scene = ExtResource("3_xd3a6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "位列仙班"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_x5n27")
+theme_override_constants/separation = 50
+
+[node name="New_Game" type="Button" parent="CanvasLayer/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "开始游戏"
+script = ExtResource("3_x5n27")
+
+[node name="Button2" type="Button" parent="CanvasLayer/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "继续"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "设置"
+
+[node name="Button4" type="Button" parent="CanvasLayer/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "退出
+"
+
+[node name="命盘2" parent="CanvasLayer" instance=ExtResource("3_4wnd8")]
+visible = false
+anchors_preset = -1
+anchor_top = 0.498
+offset_left = -21.0
+offset_top = -370.2
+offset_right = 776.0
+offset_bottom = 425.0
+palace_minimum_size = 200
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_x5n27")
+autoplay = true

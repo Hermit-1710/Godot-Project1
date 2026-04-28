@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://dahxrm55ki5og"]
+
+[ext_resource type="Theme" uid="uid://onm4paip8la4" path="res://shader/rarity_color/4.tres" id="1_k5r0h"]
+[ext_resource type="Script" uid="uid://cjqp5g66gai1u" path="res://scripts/DataClass/starInfo.gd" id="2_h1nc7"]
+[ext_resource type="FontFile" uid="uid://cc2ofkc3dn2mj" path="res://assets/Text style文字风格/中文字体/全字庫說文解字.ttf" id="3_bplb3"]
+[ext_resource type="StyleBox" uid="uid://bhxr32v6o420c" path="res://shader/浅灰半透.tres" id="3_c3ulx"]
+[ext_resource type="Texture2D" uid="uid://cj0a586wuata1" path="res://assets/星曜图标新版/太阴星.png" id="3_uey2i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0yhm"]
+font = ExtResource("3_bplb3")
+font_size = 300
+font_color = Color(1, 0, 0.128697, 1)
+
+[sub_resource type="Theme" id="Theme_nkrn5"]
+Label/font_sizes/font_size = 20
+
+[node name="红色" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 500)
+size_flags_vertical = 0
+theme = ExtResource("1_k5r0h")
+script = ExtResource("2_h1nc7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "科"
+label_settings = SubResource("LabelSettings_o0yhm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="星曜 图标&Title" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/星曜 图标&Title"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_uey2i")
+expand_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/星曜 图标&Title"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("3_c3ulx")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/星曜 图标&Title/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/星曜 图标&Title"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/星曜 图标&Title/VBoxContainer"]
+modulate = Color(1, 0, 0.124526, 1)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "太阴星 
+"
+
+[node name="classification" type="Label" parent="MarginContainer/VBoxContainer/星曜 图标&Title/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866588, 0.713379, 0.52448, 1)
+theme_override_font_sizes/font_size = 20
+text = "主星，阴"
+
+[node name="说明" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_nkrn5")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/说明"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/说明/HBoxContainer2"]
+modulate = Color(0.976471, 0.835294, 0.631373, 1)
+layout_mode = 2
+text = "基础得分："
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/说明/HBoxContainer2"]
+modulate = Color(0, 0.988783, 0.210573, 1)
+layout_mode = 2
+text = "+5"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/说明"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/说明"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[color=#f9d5a1]旺位[/color] : 位于[color=#f9d5a1] 申/酉/戌/亥/子/丑[/color] 宫,  额外[color=green]+2[/color]"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer/说明"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=#f9d5a1]旺位[/color] : 位于[color=#f9d5a1] 申/酉/戌/亥/子/丑[/color] 宫,  额外[color=green]+2[/color]"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "选择"

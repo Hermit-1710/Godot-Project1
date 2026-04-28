@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://du6v4yvno21fk"]
+
+[ext_resource type="Texture2D" uid="uid://cnyxq8atywujy" path="res://assets/dice/Star 6 (1).png" id="1_ug0b8"]
+
+[node name="Star" type="TextureRect"]
+modulate = Color(0.160567, 0.160567, 0.160567, 1)
+texture = ExtResource("1_ug0b8")
+expand_mode = 3

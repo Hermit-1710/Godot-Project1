@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddq6pbplsgw6n"]
+
+[ext_resource type="Script" uid="uid://ckpan7kgr4f0d" path="res://scene/Autoload/plants_manager.gd" id="1_ml5u5"]
+
+[node name="PlantsManager" type="Node" node_paths=PackedStringArray("plant_status_UI", "starpanel")]
+script = ExtResource("1_ml5u5")
+plant_status_UI = NodePath("")
+starpanel = NodePath("")

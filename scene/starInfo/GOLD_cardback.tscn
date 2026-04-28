@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgoaj0dtd6tbf"]
+
+[ext_resource type="Theme" uid="uid://mc77xg5aaasn" path="res://shader/rarity_color/5.tres" id="1_8c85c"]
+[ext_resource type="Script" uid="uid://cjqp5g66gai1u" path="res://scripts/DataClass/starInfo.gd" id="2_1gddm"]
+[ext_resource type="Texture2D" uid="uid://c06ctsx5wouv0" path="res://assets/Patterns纹理/formal-invitation.svg" id="3_1gddm"]
+[ext_resource type="Shader" uid="uid://ba5k4fo1tkq35" path="res://shader/SHADER/red.gdshader" id="4_mplre"]
+[ext_resource type="Texture2D" uid="uid://dl3xd7fdpil6f" path="res://assets/Patterns纹理/endless-clouds.svg" id="5_2xngl"]
+
+[sub_resource type="Shader" id="Shader_q8jjq"]
+code = "shader_type canvas_item;
+
+void fragment() {
+	vec4 InC= texture(TEXTURE,UV);
+	vec4 default_color = vec4(UV[0]*0.5,UV[1]*0.5,0.8,InC.a);
+	COLOR = vec4(0.8,0.8,0.5,InC.a);
+	//COLOR = default_color;
+}
+
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_685fv"]
+shader = SubResource("Shader_q8jjq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_if41v"]
+shader = ExtResource("4_mplre")
+
+[node name="starinfo" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 500)
+offset_right = 300.0
+offset_bottom = 429.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("1_8c85c")
+script = ExtResource("2_1gddm")
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+material = SubResource("ShaderMaterial_685fv")
+layout_mode = 2
+texture = ExtResource("3_1gddm")
+region_rect = Rect2(0, 0, 100, 18)
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_if41v")
+layout_mode = 2
+texture = ExtResource("5_2xngl")
+expand_mode = 5
+stretch_mode = 1

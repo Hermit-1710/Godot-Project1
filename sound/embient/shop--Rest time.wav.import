@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg27ctqs4vw51"
+path="res://.godot/imported/shop--Rest time.wav-22d412d5a5398e9f5b99f4d0f03f4f06.sample"
+
+[deps]
+
+source_file="res://sound/embient/shop--Rest time.wav"
+dest_files=["res://.godot/imported/shop--Rest time.wav-22d412d5a5398e9f5b99f4d0f03f4f06.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

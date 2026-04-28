@@ -1,0 +1,201 @@
+[gd_scene load_steps=19 format=3 uid="uid://ccbyiwu7oggvh"]
+
+[ext_resource type="Shader" uid="uid://dcu76q81k3ia8" path="res://shader/SHADER/2d伪3d透视+反色着色器.gdshader" id="1_5kb1l"]
+[ext_resource type="Texture2D" uid="uid://b5fjf7a3l1wmr" path="res://assets/星曜立绘/微信图片_20250407190323.png" id="2_r40u2"]
+[ext_resource type="Script" uid="uid://b1b4nty1gujxj" path="res://texture_rect.gd" id="3_171fp"]
+[ext_resource type="FontFile" uid="uid://bipdbxpci5g16" path="res://assets/Text style文字风格/中文字体/演示悠然小楷.ttf" id="4_dum44"]
+[ext_resource type="Texture2D" uid="uid://bi6h2q4mwdu5v" path="res://assets/image 53.png" id="5_hh5ac"]
+[ext_resource type="Texture2D" uid="uid://bvcfnnjjbh3vc" path="res://assets/image 55.png" id="6_p52s2"]
+[ext_resource type="Shader" uid="uid://2ve4alrmusay" path="res://shader/SHADER/动态阴影着色器.gdshader" id="7_23gsv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ixcm"]
+shader = ExtResource("1_5kb1l")
+shader_parameter/fov = 9.613
+shader_parameter/cull_back = false
+shader_parameter/y_rot = 180.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.75
+shader_parameter/shine_color = Color(1, 1, 1, 0.893)
+shader_parameter/shine_progress = 0.5
+shader_parameter/shine_size = 0.05
+shader_parameter/shine_angle = 45.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydiuw"]
+bg_color = Color(1, 0.909796, 0.779502, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.786037, 0.476982, 1)
+
+[sub_resource type="Theme" id="Theme_6rgql"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ydiuw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdqh5"]
+font = ExtResource("4_dum44")
+font_size = 35
+font_color = Color(0.588253, 0.482171, 0.328944, 1)
+outline_size = 5
+outline_color = Color(1, 0.87213, 0.687431, 1)
+shadow_size = 10
+shadow_color = Color(0.581, 0.371, 0.371, 1)
+
+[sub_resource type="Gradient" id="Gradient_kqniv"]
+offsets = PackedFloat32Array(0, 0.984375, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.46875, 0.46875, 0.46875, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7bkdl"]
+gradient = SubResource("Gradient_kqniv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5xti"]
+bg_color = Color(0, 0, 0, 0.238)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.447)
+expand_margin_left = 5.0
+expand_margin_top = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_wmatj"]
+font_size = 15
+font_color = Color(0.106258, 0.106258, 0.106258, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3lhf"]
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6d7e"]
+font_size = 11
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8la77"]
+shader = ExtResource("7_23gsv")
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+shader_parameter/shadow_scale = 0.0
+shader_parameter/shadow_min_length = 2.0
+shader_parameter/shadow_max_length = 10.0
+shader_parameter/screen_center = Vector2(960, 540)
+
+[node name="TextureRect" type="TextureRect"]
+material = SubResource("ShaderMaterial_8ixcm")
+custom_minimum_size = Vector2(200, 300)
+offset_left = 559.0
+offset_top = 371.0
+offset_right = 759.0
+offset_bottom = 671.0
+texture = ExtResource("2_r40u2")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("3_171fp")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+show_behind_parent = true
+custom_minimum_size = Vector2(160, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 120.894
+offset_top = -120.0
+offset_right = 285.894
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_6rgql")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "红鸾星"
+label_settings = SubResource("LabelSettings_cdqh5")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("5_hh5ac")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("6_p52s2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(140, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture1D_7bkdl")
+expand_mode = 5
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5xti")
+text = "戊级星"
+label_settings = SubResource("LabelSettings_wmatj")
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5xti")
+text = "+1"
+label_settings = SubResource("LabelSettings_v3lhf")
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5xti")
+text = "桃花【小】：
+入场召唤1颗/1-2颗/2颗 临时  戊级 异星曜
+"
+label_settings = SubResource("LabelSettings_a6d7e")
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 506.0
+offset_top = 159.0
+offset_right = 544.0
+offset_bottom = 190.0
+text = "test
+"
+
+[node name="Shadow" type="TextureRect" parent="."]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_8la77")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.0633333
+anchor_right = 1.01
+anchor_bottom = 1.06333
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r40u2")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="test_transitiontype"]

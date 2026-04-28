@@ -1,0 +1,277 @@
+[gd_scene load_steps=20 format=3 uid="uid://1xa06c00ajsq"]
+
+[ext_resource type="Texture2D" uid="uid://b7vmn1i8d6mxl" path="res://assets/新版UI/99cb847b9bdf1a0381592732a969610f_0.png" id="1_0tru1"]
+[ext_resource type="Script" uid="uid://dl7udxpdn1n5r" path="res://scripts/UI/game_info_panel.gd" id="2_v7dma"]
+[ext_resource type="FontFile" uid="uid://bk5acscwajn4y" path="res://assets/Text style文字风格/中文字体/演示夏行楷.ttf" id="3_gytjw"]
+[ext_resource type="LabelSettings" uid="uid://bavbnf2b7wc3s" path="res://shader/label主题/信息栏.tres" id="4_v7dma"]
+[ext_resource type="FontFile" uid="uid://bipdbxpci5g16" path="res://assets/Text style文字风格/中文字体/演示悠然小楷.ttf" id="4_ypaqu"]
+[ext_resource type="LabelSettings" uid="uid://gqmutp2a56g4" path="res://shader/文本/计分板文字.tres" id="5_a1e3y"]
+[ext_resource type="Texture2D" uid="uid://b8v2ilsbvrvkv" path="res://assets/杂图/Polygon 17.png" id="6_ofsba"]
+[ext_resource type="StyleBox" uid="uid://bok4heety1asy" path="res://shader/label主题/信息栏数字主题.tres" id="7_gytjw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bhqc"]
+texture = ExtResource("1_0tru1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_newxu"]
+font = ExtResource("3_gytjw")
+font_size = 70
+font_color = Color(1, 0.893448, 0.723601, 1)
+outline_size = 10
+outline_color = Color(0.798701, 0.457208, 0.228639, 1)
+shadow_size = 20
+shadow_color = Color(0.764758, 0.37232, 0.37232, 0.631)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8vwy5"]
+font = ExtResource("3_gytjw")
+font_size = 50
+font_color = Color(0.438902, 0.239865, 0.118425, 1)
+shadow_color = Color(0.98, 0.837083, 0.637, 0.513726)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gytjw"]
+bg_color = Color(0.588253, 0.499504, 0.406317, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ypaqu"]
+font = ExtResource("4_ypaqu")
+font_size = 50
+font_color = Color(0.438902, 0.239865, 0.118425, 1)
+outline_color = Color(0.60183, 0.490327, 0.415695, 1)
+shadow_size = 3
+shadow_color = Color(0.44, 0.241927, 0.1188, 0.172549)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypaqu"]
+bg_color = Color(0.438902, 0.239865, 0.118425, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.812278, 0.748842, 0.657211, 1)
+corner_radius_top_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_a1e3y"]
+font = ExtResource("4_ypaqu")
+font_size = 40
+font_color = Color(0.438902, 0.239865, 0.118425, 1)
+outline_color = Color(0.60183, 0.490327, 0.415695, 1)
+shadow_size = 3
+shadow_color = Color(0.44, 0.241927, 0.1188, 0.172549)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1e3y"]
+bg_color = Color(0.438902, 0.239865, 0.118425, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.812278, 0.748842, 0.657211, 1)
+corner_radius_top_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_gytjw"]
+font = ExtResource("4_ypaqu")
+font_size = 50
+font_color = Color(0.160567, 0.160567, 0.160567, 1)
+shadow_color = Color(0.98, 0.837083, 0.637, 0.513726)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ofsba"]
+font = ExtResource("4_ypaqu")
+font_size = 40
+font_color = Color(0.438902, 0.239865, 0.118425, 1)
+outline_color = Color(0.60183, 0.490327, 0.415695, 1)
+shadow_size = 3
+shadow_color = Color(0.44, 0.241927, 0.1188, 0.172549)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7x3aj"]
+
+[node name="主要信息&计分UI" type="PanelContainer" node_paths=PackedStringArray("exam_label", "round_label", "total_score_label", "submit_left_label", "modify_left_label")]
+custom_minimum_size = Vector2(350, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -400.0
+offset_right = 175.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0bhqc")
+script = ExtResource("2_v7dma")
+exam_label = NodePath("MarginContainer/VBoxContainer/VBoxContainer/县试")
+round_label = NodePath("MarginContainer/VBoxContainer/VBoxContainer/场数")
+total_score_label = NodePath("MarginContainer/VBoxContainer/总分数/数字")
+submit_left_label = NodePath("MarginContainer/VBoxContainer/剩余提交次数/数字")
+modify_left_label = NodePath("MarginContainer/VBoxContainer/剩余修改次数/数字")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "明经科"
+label_settings = SubResource("LabelSettings_newxu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="县试" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "乡试"
+label_settings = ExtResource("4_v7dma")
+
+[node name="场数" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "第1场"
+label_settings = SubResource("LabelSettings_8vwy5")
+
+[node name="Line2D3" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 3)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_gytjw")
+
+[node name="总分数" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="标题" type="Label" parent="MarginContainer/VBoxContainer/总分数"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "总分"
+label_settings = SubResource("LabelSettings_ypaqu")
+
+[node name="数字" type="Label" parent="MarginContainer/VBoxContainer/总分数"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ypaqu")
+text = "15"
+label_settings = ExtResource("5_a1e3y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="剩余提交次数" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="标题" type="Label" parent="MarginContainer/VBoxContainer/剩余提交次数"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "提交次数"
+label_settings = SubResource("LabelSettings_a1e3y")
+
+[node name="数字" type="Label" parent="MarginContainer/VBoxContainer/剩余提交次数"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_a1e3y")
+text = "3"
+label_settings = ExtResource("5_a1e3y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="剩余修改次数" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="标题" type="Label" parent="MarginContainer/VBoxContainer/剩余修改次数"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "修改次数"
+label_settings = SubResource("LabelSettings_a1e3y")
+
+[node name="数字" type="Label" parent="MarginContainer/VBoxContainer/剩余修改次数"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("7_gytjw")
+text = "3"
+label_settings = ExtResource("5_a1e3y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line2D2" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 3)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_gytjw")
+
+[node name="玩家姓名" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="标题" type="Label" parent="MarginContainer/VBoxContainer/玩家姓名"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "姓名"
+label_settings = SubResource("LabelSettings_a1e3y")
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/玩家姓名"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "吴"
+label_settings = SubResource("LabelSettings_gytjw")
+
+[node name="Line2D" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 3)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_gytjw")
+
+[node name="更多信息" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/更多信息"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "更多信息"
+label_settings = SubResource("LabelSettings_ofsba")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/更多信息"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7x3aj")
+icon = ExtResource("6_ofsba")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 20.0
+rounded = true
+allow_greater = true

@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://cgf0xdotj0qkj"
+path="res://.godot/imported/计分音效.sfxr-65532d96b3d0040f2b4853a37ac1b13f.sample"
+
+[deps]
+
+source_file="res://sound/计分音效.sfxr"
+dest_files=["res://.godot/imported/计分音效.sfxr-65532d96b3d0040f2b4853a37ac1b13f.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

@@ -1,0 +1,211 @@
+[gd_scene load_steps=18 format=3 uid="uid://dcq2o2pu4c5a8"]
+
+[ext_resource type="Script" uid="uid://ctpa10y38wf07" path="res://scripts/星盘.gd" id="1_rjxsv"]
+[ext_resource type="Texture2D" uid="uid://cbrr85jlo6wo3" path="res://assets/picture/宫位.png" id="2_m7a5t"]
+
+[sub_resource type="Resource" id="Resource_dpbei"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_8f5ia"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_dnpja"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_tg1p3"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_tr43j"]
+metadata/__load_path__ = "res://z占位.png"
+
+[sub_resource type="Resource" id="Resource_37vuf"]
+metadata/__load_path__ = "res://z占位.png"
+
+[sub_resource type="Resource" id="Resource_0vjcs"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_kfls0"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_gu0ef"]
+metadata/__load_path__ = "res://z占位.png"
+
+[sub_resource type="Resource" id="Resource_js6v5"]
+metadata/__load_path__ = "res://z占位.png"
+
+[sub_resource type="Resource" id="Resource_nuyjg"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_5j1ua"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_r6xhc"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_ff4h7"]
+metadata/__load_path__ = "res://宫位.png"
+
+[sub_resource type="Resource" id="Resource_nexxs"]
+metadata/__load_path__ = "res://宫位.png"
+
+[node name="命盘" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -186.0
+offset_right = 186.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 124
+theme_override_constants/v_separation = 124
+columns = 4
+script = ExtResource("1_rjxsv")
+
+[node name="巳" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="巳"]
+texture = ExtResource("2_m7a5t")
+
+[node name="午" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="午"]
+texture = SubResource("Resource_dpbei")
+
+[node name="未" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="未"]
+texture = SubResource("Resource_8f5ia")
+
+[node name="申" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="申"]
+texture = SubResource("Resource_dnpja")
+
+[node name="辰" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="辰"]
+texture = SubResource("Resource_tg1p3")
+
+[node name="00" type="Container" parent="." groups=["占位宫"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="00"]
+texture = SubResource("Resource_tr43j")
+
+[node name="01" type="Container" parent="." groups=["占位宫"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="01"]
+texture = SubResource("Resource_37vuf")
+
+[node name="酉" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="酉"]
+texture = SubResource("Resource_0vjcs")
+
+[node name="卯" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="卯"]
+texture = SubResource("Resource_kfls0")
+
+[node name="02" type="Container" parent="." groups=["占位宫"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="02"]
+texture = SubResource("Resource_gu0ef")
+
+[node name="03" type="Container" parent="." groups=["占位宫"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="03"]
+texture = SubResource("Resource_js6v5")
+
+[node name="戌" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="戌"]
+texture = SubResource("Resource_nuyjg")
+
+[node name="寅" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="寅"]
+texture = SubResource("Resource_5j1ua")
+
+[node name="丑" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="丑"]
+texture = SubResource("Resource_r6xhc")
+
+[node name="子" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="子"]
+texture = SubResource("Resource_ff4h7")
+
+[node name="亥" type="Container" parent="." groups=["宫位"]]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="亥"]
+texture = SubResource("Resource_nexxs")
+
+[node name="亥" type="Label" parent="亥/Sprite2D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.224
+offset_top = -81.4
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "亥"
+
+[node name="MarginContainer" type="MarginContainer" parent="亥/Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="亥/Sprite2D/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 2
+
+[node name="星耀" type="Label" parent="亥/Sprite2D/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "天机星"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="亥/Sprite2D/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "太阴星
+"
+autowrap_mode = 2

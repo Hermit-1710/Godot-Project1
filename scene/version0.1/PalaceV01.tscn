@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgeb6jpmwuwm8"]
+
+[ext_resource type="Theme" uid="uid://y7g3etdqhq5u" path="res://shader/palace_theme2.tres" id="1_7ubkl"]
+[ext_resource type="Script" uid="uid://2eet52ycty6j" path="res://scripts/world/palace_container.gd" id="2_t7w7i"]
+[ext_resource type="PackedScene" uid="uid://b76mvamqf3kqe" path="res://scene/星盘系统/StarLabelNode.tscn" id="3_7b3ob"]
+[ext_resource type="Script" uid="uid://cla018rvf21w0" path="res://scripts/DataClass/PalaceData.gd" id="4_c8y2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et4g4"]
+bg_color = Color(0.917647, 0.807843, 0.647059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.235242, 0.105245, 0.105245, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6x5c"]
+
+[node name="Palace" type="PanelContainer"]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7ubkl")
+theme_override_styles/panel = SubResource("StyleBoxFlat_et4g4")
+script = ExtResource("2_t7w7i")
+palace_index = 8
+
+[node name="StarContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="StarContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "天机星"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="StarNode" parent="StarContainer" instance=ExtResource("3_7b3ob")]
+visible = false
+layout_mode = 2
+
+[node name="地支" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m6x5c")
+text = "地支"
+
+[node name="PalaceData" type="Node" parent="."]
+script = ExtResource("4_c8y2f")

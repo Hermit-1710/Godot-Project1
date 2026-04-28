@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpa84xs56tchv"]
+
+[ext_resource type="Texture2D" uid="uid://cy4c0sfgmyqhl" path="res://assets/Star 12 (1).png" id="1_o5air"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnsvw"]
+content_margin_right = 39.0
+bg_color = Color(0.95484, 0.91168, 0.577892, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.961629, 0.770437, 0.651567, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 20.0
+expand_margin_right = 11.0
+expand_margin_bottom = 25.0
+shadow_color = Color(0.628985, 0.538372, 0.407564, 0.628)
+shadow_size = 10
+shadow_offset = Vector2(20, 40)
+
+[node name="计分板" type="PanelContainer"]
+top_level = true
+anchors_preset = -1
+anchor_left = -0.01125
+anchor_top = -0.48
+anchor_right = -0.01125
+anchor_bottom = -0.48
+offset_left = 19.0
+offset_top = 538.0
+offset_right = 354.0
+offset_bottom = 740.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnsvw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Round number" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.545098, 0.545098, 0.996078)
+theme_override_font_sizes/font_size = 50
+text = "     Round I  "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="current_score_label" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(0.914108, 0.451042, 0.451042, 1)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/normal_font_size = 40
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 0.545098, 0.545098, 0.996078)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "/"
+
+[node name="target_score_label" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 0.545098, 0.545098, 0.996078)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "100"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_o5air")
+expand_mode = 3

@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bavbnf2b7wc3s"]
+
+[ext_resource type="FontFile" uid="uid://bipdbxpci5g16" path="res://assets/Text style文字风格/中文字体/演示悠然小楷.ttf" id="1_p8s87"]
+
+[resource]
+font = ExtResource("1_p8s87")
+font_size = 95
+font_color = Color(0.438902, 0.239865, 0.118425, 1)
+outline_color = Color(0.60183, 0.490327, 0.415695, 1)
+shadow_size = 3
+shadow_color = Color(0.44, 0.241927, 0.1188, 0.172549)
+shadow_offset = Vector2(2, 2)

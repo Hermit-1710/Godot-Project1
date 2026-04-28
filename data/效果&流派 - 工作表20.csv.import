@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://t78uali08d8"
+
+[deps]
+
+files=["res://data/效果&流派 - 工作表20.原始效果描述.translation", "res://data/效果&流派 - 工作表20.效果ID (Effect ID).translation", "res://data/效果&流派 - 工作表20.目标范围 (Target Scope).translation", "res://data/效果&流派 - 工作表20.效果参数 (Parameters).translation"]
+
+source_file="res://data/效果&流派 - 工作表20.csv"
+dest_files=["res://data/效果&流派 - 工作表20.原始效果描述.translation", "res://data/效果&流派 - 工作表20.效果ID (Effect ID).translation", "res://data/效果&流派 - 工作表20.目标范围 (Target Scope).translation", "res://data/效果&流派 - 工作表20.效果参数 (Parameters).translation"]
+
+[params]
+
+compress=false
+delimiter=0

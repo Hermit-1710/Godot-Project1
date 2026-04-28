@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8j8ijvxynpcc"]
+
+[ext_resource type="Theme" uid="uid://y7g3etdqhq5u" path="res://shader/palace_theme2.tres" id="1_w2yel"]
+[ext_resource type="Script" uid="uid://2eet52ycty6j" path="res://scripts/world/palace_container.gd" id="2_c2xc3"]
+[ext_resource type="StyleBox" uid="uid://baaa4ogoulfrq" path="res://shader/palace_bg.tres" id="3_wo8v0"]
+[ext_resource type="PackedScene" uid="uid://hwtrrbgrywwe" path="res://scene/starText/StarTextNode.tscn" id="4_os3q3"]
+[ext_resource type="Script" uid="uid://cla018rvf21w0" path="res://scripts/DataClass/PalaceData.gd" id="5_see5d"]
+[ext_resource type="PackedScene" uid="uid://drcid78obmufv" path="res://scene/计分UI模块.tscn" id="6_wo8v0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wo8v0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6x5c"]
+
+[node name="Palace" type="PanelContainer"]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 1
+theme = ExtResource("1_w2yel")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wo8v0")
+script = ExtResource("2_c2xc3")
+
+[node name="palace_bg" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_wo8v0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="StarContainer" type="GridContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+
+[node name="StarText" parent="MarginContainer/StarContainer" instance=ExtResource("4_os3q3")]
+visible = false
+layout_mode = 2
+
+[node name="StarText2" parent="MarginContainer/StarContainer" instance=ExtResource("4_os3q3")]
+visible = false
+layout_mode = 2
+
+[node name="StarText3" parent="MarginContainer/StarContainer" instance=ExtResource("4_os3q3")]
+visible = false
+layout_mode = 2
+
+[node name="地支" type="Label" parent="."]
+modulate = Color(0.0383711, 0.0126245, 0.0126245, 1)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m6x5c")
+text = "地支"
+
+[node name="PalaceData" type="Node" parent="."]
+script = ExtResource("5_see5d")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" parent="CenterContainer" instance=ExtResource("6_wo8v0")]
+layout_mode = 2
